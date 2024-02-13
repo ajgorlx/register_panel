@@ -1,0 +1,46 @@
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.formc{
+    display: block;
+    max-width: 300px;
+    margin: auto;
+
+    background: rgb(238, 240, 241);
+    padding: 50px;
+    border-radius: 50px;
+}
+
+
+.formc2 mat-form-field{
+    width: 100%;
+}
+.formc2{
+    display:inline-block;
+    max-width: 300x;
+    margin: auto;
+
+    background: rgb(238, 240, 241);
+    padding: 40px;
+    border-radius: 5px;
+}
+
+
+.formc mat-form-field{
+    width: 100%;
+}
+
+.center {
+    display:contents;
+    justify-content:center;
+}
+.margin-top{
+    margin-top:12px;
+}
+.text-center{
+    text-align: center;
+}
+
