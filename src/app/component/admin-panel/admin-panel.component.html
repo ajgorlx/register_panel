@@ -23,12 +23,14 @@
         <tr>
             <th>Display Name </th>
             <th>Role</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
             <td>{{ user.displayName }}</td>
             <td>{{ user.role }}</td>
+            <td>{{ user.email }}</td>
         </tr>
     </tbody>
 </table>

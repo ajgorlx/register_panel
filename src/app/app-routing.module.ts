@@ -6,7 +6,8 @@ import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AdminPanelComponent } from './component/admin-panel/admin-panel.component';
 import { ProfileComponent } from './component/profile/profile.component';
-import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate, AuthGuard} from '@angular/fire/auth-guard'
+import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate,} from '@angular/fire/auth-guard'
+import { AuthGuard } from './services/auth.guard';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['home']);
@@ -38,7 +39,7 @@ const routes: Routes =
 {
   path:'admin-panel',
   component:AdminPanelComponent,
-  canActivate:[()=> {return true;}]
+  canActivate:[AuthGuard]
   
 },
 {

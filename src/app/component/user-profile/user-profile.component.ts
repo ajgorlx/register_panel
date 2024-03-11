@@ -9,9 +9,6 @@ import { Role } from '../../role';
 })
 export class UserProfileComponent {
 
-@ViewChild(MatPaginator, {static:true})
-paginator!: MatPaginator;
-
 }
 
 export interface ProfileUser {

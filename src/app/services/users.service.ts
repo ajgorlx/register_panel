@@ -41,6 +41,34 @@ export class UsersService {
 
 }
 
+getUserRole(): Observable<string | null> {
+  return this.authService.currentUser$.pipe(
+    switchMap(user => {
+      if (!user?.uid) {
+        return of(null);
+      }
+      const userDocRef = doc(this.firestore, 'users', user.uid);
+      return docData(userDocRef).pipe(
+        switchMap((userData: any) => {
+          if (userData && userData.role) {
+            return of(userData.role);
+          } else {
+            return of(null);
+          }
+          
+        })
+      );
+    })
+  );
+}
+
+isAdmin():Observable<boolean> {
+  return this.getUserRole().pipe(
+    map(role => {
+      return role === 'Admin';
+    })
+  )
+}
 
 
 getAllUsers(): Observable<ProfileUser[]>{
