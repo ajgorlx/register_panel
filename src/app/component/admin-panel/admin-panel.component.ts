@@ -5,6 +5,8 @@ import { switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsersService } from '../../services/users.service';
 import { Role } from '../../role';
+import { ProfileUser } from '../user-profile/user-profile.component'
+import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
   selector: 'app-admin-panel',
@@ -13,6 +15,9 @@ import { Role } from '../../role';
 })
 export class AdminPanelComponent implements OnInit {
 
+user:ProfileUser[] = [];
+displayedColumns: string[] = ['firstName', 'lastName', 'displayName','email', 'role', 'phone', 'address'];
+dataSource = new MatTableDataSource<ProfileUser>(this.user)
 
 users:any[] = [];
 
@@ -34,8 +39,9 @@ ngOnInit(): void {
 }
 
 loadUsers() {
-  this.usersService.getAllUsers().subscribe(users => {
-    this.users = users;
+  this.usersService.getAllUsers().subscribe(user => {
+    this.user = user;
+    this.dataSource.data = this.user
   });
 }
 get email(){

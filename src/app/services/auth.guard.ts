@@ -11,7 +11,7 @@ export const AuthGuard = () => {
                 if (isAdmin) {
                     return [true];
                 } else {
-                    router.navigate(['/'])
+                    router.navigate(['/home'])
                     return [false]
                 }
             })

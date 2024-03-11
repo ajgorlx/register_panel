@@ -26,6 +26,7 @@ import { AdminPanelComponent } from './component/admin-panel/admin-panel.compone
 import { ProfileComponent } from './component/profile/profile.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { UserProfileComponent } from './component/user-profile/user-profile.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -49,6 +50,7 @@ import { UserProfileComponent } from './component/user-profile/user-profile.comp
 
   ],
   imports: [
+    MatTableModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,

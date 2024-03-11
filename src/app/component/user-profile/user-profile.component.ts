@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
 import { Role } from '../../role';
 
 @Component({
